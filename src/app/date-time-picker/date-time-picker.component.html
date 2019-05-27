@@ -1,0 +1,99 @@
+<div class="displayContainer">
+  <div class="displayTime">
+    <label>Time</label> {{getFinalTime()}}
+  </div>
+  <div class="displayDate">
+    <label>Date</label> {{getFinalDate()}}
+  </div>
+</div>
+<div class="container">
+
+  <!-- Time Picker -->
+  <div class="timePickerContainer">
+    <h1>Time</h1>
+    <div class="timePicker">
+
+      <!-- Hour Picker -->
+      <div class="hourContainer">
+        <i class="fa fa-chevron-up" aria-hidden="true" (click)="changeHour(1)"></i>
+        <div class="hour">{{SelectedHour}}</div>
+        <i class="fa fa-chevron-down" aria-hidden="true" (click)="changeHour(-1)"></i>
+      </div>
+
+      <!-- Minutes Picker -->
+      <div class="minutesContainer">
+        <i class="fa fa-chevron-up" aria-hidden="true" (click)="changeMinutes(1)"></i>
+        <div class="min">{{SelectedMinutes}}</div>
+        <i class="fa fa-chevron-down" aria-hidden="true" (click)="changeMinutes(-1)"></i>
+      </div>
+
+      <!-- Seconds Picker -->
+      <div class="secondsContainer">
+        <i class="fa fa-chevron-up" aria-hidden="true" (click)="changeSeconds(1)"></i>
+        <div class="sec">{{SelectedSeconds}}</div>
+        <i class="fa fa-chevron-down" aria-hidden="true" (click)="changeSeconds(-1)"></i>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Vertical Line -->
+  <div class="verticalLine"></div>
+
+  <!-- Date Picker -->
+  <div class="datePicker">
+
+    <!-- Month and Year Picker -->
+    <div class="yearMonthPicker" #yearMonthPicker>
+      <i class="fa fa-chevron-left" aria-hidden="true" (click)="changeYear_Month(-1)"></i>
+      <div class="monthYear" (click)="showMonths()">
+        <div class="month">{{SelectedMonth}}</div>
+        <div class="year">{{SelectedYear}}</div>
+      </div>
+      <i class="fa fa-chevron-right" aria-hidden="true" (click)="changeYear_Month(1)"></i>
+    </div>
+
+    <!-- Display all the names of days-->
+    <div class="dayNameContainer" #dayNameContainer>
+      <span *ngFor="let name of availableDaysName">{{name.slice(0,3)}}</span>
+    </div>
+
+    <!-- Display all the days in a month -->
+    <div class="dayContainer" #dayContainer>
+      <span *ngFor="let day of availableDays" [class.disabledDate]="disableSelectedDay(day)" [class.highlightedDate]="highlightSelectedDay(day)"
+        (click)="setDay(day)">{{day}}</span>
+    </div>
+
+    <!-- Year Picker -->
+    <div class="yearPicker" #yearPicker>
+      <i class="fa fa-chevron-left" aria-hidden="true" (click)="changeYear(-1)"></i>
+      <div class="year" (click)="showYears()">{{SelectedYear}}</div>
+      <i class="fa fa-chevron-right" aria-hidden="true" (click)="changeYear(1)"></i>
+    </div>
+
+    <!-- Display all Month -->
+    <div class="monthContainer" #monthContainer>
+      <span *ngFor="let month of availableMonths" [class.highlightedDate]="highlightSelectedElement(SelectedMonth,month)"
+        (click)="setMonth(month)">{{month}}</span>
+    </div>
+
+    <!-- Year Range Picker -->
+    <div class="yearRangePicker" #yearRangePicker>
+      <i class="fa fa-chevron-left" aria-hidden="true" (click)="changeYearRange(-16)"></i>
+      <div class="yearRange">{{yearStartRange}}-{{yearEndRange}}</div>
+      <i class="fa fa-chevron-right" aria-hidden="true" (click)="changeYearRange(16)"></i>
+    </div>
+
+    <!-- Display years based on Range selected -->
+    <div class="yearContainer" #yearContainer>
+      <span *ngFor="let year of availableYears" [class.highlightedDate]="highlightSelectedElement(SelectedYear,year)"
+        (click)="setYear(year)">{{year}}</span>
+    </div>
+
+
+  </div>
+
+</div>
+<div class="doneBtnContainer">
+  <input type="button" class="doneBtn" (click)="setFinalDateTime()" value="Done">
+</div>

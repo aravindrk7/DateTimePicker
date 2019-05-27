@@ -1,0 +1,195 @@
+*{
+    transition: .5s;
+}
+p,span,div,h1{
+    font-family: 'Quicksand', sans-serif;
+}
+.displayContainer{
+    display: flex;
+    justify-content: space-between;
+    margin: 150px auto;
+    margin-bottom: 20px;
+    width: 600px;
+    padding: 10px;
+    text-align: center;
+
+}
+.displayTime ,.displayDate{
+    width: 50%;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px;
+}
+.displayTime label,.displayDate label{
+    font-size: 14px;
+    text-transform: uppercase;
+    color: rgb(158, 158, 158);
+    margin-right: 10px;
+}
+
+.container{
+    display: flex;
+    margin: 10px auto;
+    width: 600px;
+    height: 320px;
+    padding: 10px;
+    box-shadow:0 0 5px gray;
+}
+.timePickerContainer{
+    width: 50%;
+    padding: 10px;
+}
+.timePickerContainer h1{
+    text-transform: uppercase;
+    font-size: 20px;
+    color: gray;
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+}
+.timePicker{
+    margin: auto 0px;
+    margin: 60px 0;
+    font-size: 30px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.fa-chevron-up,.fa-chevron-down{
+    font-size: 15px;
+    color: gray;
+}
+.verticalLine{
+    background: orange;
+    width: 2px;
+    margin: 10px;
+}
+.datePicker{
+    width: 50%;
+    padding: 10px;
+}
+.yearMonthPicker{
+    cursor: pointer;
+    display: flex;
+    font-weight: bold;
+    justify-content: space-between;
+}
+.dayNameContainer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    font-weight: bold;
+}
+.dayNameContainer span{
+    color: rgb(145, 142, 142);
+}
+.dayContainer{
+    display: grid;
+    margin-top: 15px;
+    grid-template-columns: repeat(7,1fr);
+    text-align: center;
+    grid-gap: 10px;
+}
+.dayContainer span{
+    cursor: pointer;
+    text-align: center;
+    padding: 5px;
+    border-radius: 50%;
+}
+.dayContainer span:hover{
+    background: rgb(233, 233, 233);
+}
+.yearPicker{
+    display: none;
+    justify-content: space-between;
+}
+.year{
+    cursor: pointer;
+}
+.yearRangePicker{
+    display: none;
+    justify-content: space-between;
+}
+.yearContainer{
+    display: none;
+    margin-top: 10px;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 10px;
+}
+.yearContainer span{
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 50%;
+}
+.yearContainer span:hover{
+    background: rgb(233, 233, 233);
+}
+.monthContainer{
+    display: none;
+    margin-top: 10px;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+}
+.monthContainer span{
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 50%;
+}
+.monthContainer span:hover{
+    background: rgb(233, 233, 233);
+    
+}
+.fa{
+    cursor: pointer;
+    padding: 5px;
+}
+.fa:hover{
+    background: rgb(233, 233, 233);
+    
+}
+.monthYear{
+    display: flex;
+}
+.monthYear:hover{
+    background: rgb(233, 233, 233);
+}
+.monthYear > div{
+    margin: 5px;
+}
+.highlightedDate{
+    background: rgb(34, 97, 214);
+    color: #fff;
+    border-radius: 50%;
+}
+.highlightedDate:hover{
+    background: rgb(48, 116, 243) !important;
+    color: #fff;
+}
+
+.disabledDate{
+    pointer-events: none;
+}
+
+// Button
+.doneBtnContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.doneBtn{
+  cursor: pointer;
+  outline: none;
+  border: none;
+  width: 100px;
+  background: rgb(34, 97, 214);
+  padding: 10px;
+  color: #fff;
+  text-align: center;  
+  margin: 30px auto;
+}
+.doneBtn:hover{
+    background: rgb(48, 116, 243) !important;
+    color: #fff;
+}
